@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .interactive-element {
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          cursor: pointer;
+          margin-top: 20px;
+        }
+      </style>
+</head>
+<body>
+    <div class="interactive-element" onclick="increaseScore()"></div>
+    <div class="interactive-element" onclick="increaseScore()"></div>
+    <div class="interactive-element" onclick="increaseScore()"></div>
+    <div class="interactive-element" onclick="increaseScore()"></div>
+  
+    <p>Очки: <span id="score">0</span></p>
+    <script>
+      let score = 0;
+      const scoreElement = document.getElementById("score");
+  
+      function increaseScore() {
+        score++;
+        scoreElement.textContent = score;
+      }
+  
+      const gameDuration = 30; 
+      let remainingTime = gameDuration;;
+      const countdownInterval = setInterval(() => {
+        remainingTime--;
+        if (remainingTime <= 0) {
+          clearInterval(countdownInterval);
+          alert("Час вийшов! Ваш результат: " + score + " очків.");
+          const interactiveElements = document.querySelectorAll(".interactive-element");
+        }
+      }, 100)
+    </script>
+  </body>
+</body>
+</html>

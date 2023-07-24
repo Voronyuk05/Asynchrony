@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Введіть час таймеру:</label>
+    <input type="text" class="timer-input">
+    <button class="timer-btn">
+        Почати таймер
+    </button>
+    <script>
+        const timerBtn = document.querySelector('.timer-btn')
+        timerBtn.addEventListener('click', () => {
+            const inputElValue = document.querySelector(".timer-input").value
+            console.log(inputElValue)
+            setTimeout(() => {
+            alert("Таймер завершено!")
+        }, inputElValue*1000)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animated-element {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-element" id="element1"></div>
+    <div class="animated-element" id="element2"></div>
+    <script>
+        const element1 = document.getElementById("element1");
+        const element2 = document.getElementById("element2");
+
+        let position = 50
+        let translateTo = 10
+        let animation = setInterval(() => {
+            position += translateTo;
+            if (position === 500 || position === 50) {
+                translateTo *= -1;
+            }
+            element1.style.left = position + "px";
+            element2.style.top = position + "px";
+        },100)
+    </script>
+</body>
+</html>
